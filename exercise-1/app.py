@@ -44,7 +44,7 @@ class PizzaTopping(db.Model):
 
 with app.app_context():
     db.create_all()
-
+ 
 ###############################################
 ### ROUTES
 ###############################################
@@ -76,7 +76,7 @@ def pizza_order_submit():
     print(pizza.size)
 
     for topping_str in ToppingType:
-        pizza.toppings.append(PizzaTopping(topping=topping_str))
+        pizza.topping.append(PizzaTopping(topping=topping_str))
 
     db.session.add(pizza)
 
